@@ -22,5 +22,4 @@ echo "kazkas";
 ?>
 <?php 
 echo "VISKAS";
-//
 ?>
