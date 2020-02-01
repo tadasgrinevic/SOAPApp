@@ -22,4 +22,5 @@ echo "kazkas";
 ?>
 <?php 
 echo "VISKAS";
+//edited by me
 ?>
