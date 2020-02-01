@@ -1,28 +1,33 @@
-<?php 
-try{
-$soapclient = new SoapClient('http://www.holidaywebservice.com/HolidayService_v2/HolidayService2.asmx?wsdl');
-$response = $soapclient->GetCountriesAvailable();
-var_dump($response);
-echo '<br><br><br>';
-$array = json_decode(json_encode($response), true);
-print_r($array);
- echo '<br><br><br>';
-echo  $array['GetCountriesAvailableResult']['CountryCode']['5']['Description'];
-	  echo '<br><br><br>';
-	foreach($array as $item) {
-		echo '<pre>'; var_dump($item);
-	}  
-}catch(Exception $e){
-	echo $e->getMessage();
+<?php
+ini_set('soap.wsdl_cache_enabled', 0);
+ini_set('soap.wsdl_cache_ttl', 900);
+ini_set('default_socket_timeout', 15);
+
+
+$params = array('param1'=>$param1);
+
+
+$wsdl = 'http://service_url/method?WSDL';
+
+$options = array(
+		'uri'=>'http://schemas.xmlsoap.org/soap/envelope/',
+		'style'=>SOAP_RPC,
+		'use'=>SOAP_ENCODED,
+		'soap_version'=>SOAP_1_1,
+		'cache_wsdl'=>WSDL_CACHE_NONE,
+		'connection_timeout'=>15,
+		'trace'=>true,
+		'encoding'=>'UTF-8',
+		'exceptions'=>true,
+	);
+try {
+	$soap = new SoapClient($wsdl, $options);
+	$data = $soap->method($params);
 }
-
-echo "kazkas";
-//one more comment
-//something new, ok.
-?>
-<?php 
-echo "VISKAS";
-//edited by me
-
-//this is new branch
+catch(Exception $e) {
+	die($e->getMessage());
+}
+  
+var_dump($data);
+die;
 ?>
