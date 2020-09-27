@@ -1,4 +1,4 @@
-# SOAP App
+# SOAP Application
 Simple example of how to use SOAP.
 
 - Establishing SOAP client
