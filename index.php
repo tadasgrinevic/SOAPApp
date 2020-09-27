@@ -6,7 +6,7 @@ var_dump($response);
 echo '<br><br><br>';
 $array = json_decode(json_encode($response), true);
 print_r($array);
- echo '<br><br><br>';
+echo '<br><br><br>';
 echo  $array['GetCountriesAvailableResult']['CountryCode']['5']['Description'];
 	  echo '<br><br><br>';
 	foreach($array as $item) {
@@ -15,12 +15,4 @@ echo  $array['GetCountriesAvailableResult']['CountryCode']['5']['Description'];
 }catch(Exception $e){
 	echo $e->getMessage();
 }
-
-echo "kazkas";
-//one more comment
-//something new, ok.
-?>
-<?php 
-echo "VISKAS";
-//edited by me
 ?>
