@@ -1,3 +1,7 @@
-# bsell
+# SOAP App
+Simple example of how to use SOAP
 
-Business Sale
+-- Establishing SOAP client
+-- Calling SOAP's method
+-- Decoding response
+-- Fetching data
