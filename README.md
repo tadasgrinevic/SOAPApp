@@ -1,5 +1,5 @@
 # SOAP App
-Simple example of how to use SOAP
+Simple example of how to use SOAP.
 
 - Establishing SOAP client
 - Calling SOAP's method
